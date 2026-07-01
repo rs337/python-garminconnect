@@ -6,6 +6,10 @@
 [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge&logo=paypal)](https://www.paypal.me/cyberjunkynl/)
 [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-red.svg?style=for-the-badge&logo=github)](https://github.com/sponsors/cyberjunky)
 
+# Robert notes
+
+- delete garmin connect file: `rm -rf ~/.garminconnect`
+
 # Python: Garmin Connect
 
 The Garmin Connect API library comes with two examples:
@@ -157,11 +161,13 @@ No browser is needed.
    to expire and refreshes it automatically — no user interaction required.
 
 **Session lifetime:**
+
 - DI tokens auto-refresh indefinitely as long as the refresh token remains valid.
 - A full re-login with credentials (and possibly MFA) is only needed if the refresh token
   itself expires or is revoked.
 
 **Token storage:**
+
 ```bash
 ~/.garminconnect/garmin_tokens.json   # saved automatically, mode 0600
 ```
@@ -178,7 +184,7 @@ library transparently falls through to the next strategy. Set
 behavior.
 
 **Cached-token gotcha & self-healing:** when a `tokenstore` is supplied,
-`login()` loads those tokens *before* the strategy chain and short-circuits if
+`login()` loads those tokens _before_ the strategy chain and short-circuits if
 they load — so stale/poisoned cached tokens used to fail every run. The library
 now detects this: if cached tokens are rejected by the API, it discards them and
 performs a fresh credential login automatically. To force a clean slate yourself
@@ -263,6 +269,7 @@ We welcome contributions! Here's how you can help:
 - **Documentation**: Improve examples, add use cases, fix typos
 
 **Before contributing:**
+
 1. Set up your dev environment (see [Development](#️-development) above)
 2. Format and lint: `pdm run format && pdm run lint`
 3. Run tests: `pdm run test`
@@ -339,6 +346,7 @@ client.unschedule_workout(scheduled_workout_id)
 **Helper functions:** `create_warmup_step`, `create_interval_step`, `create_recovery_step`, `create_cooldown_step`, `create_repeat_group`
 
 ### Additional Resources
+
 - **Simple Example**: [example.py](https://raw.githubusercontent.com/cyberjunky/python-garminconnect/master/example.py) - Getting started guide
 - **Comprehensive Demo**: [demo.py](https://raw.githubusercontent.com/cyberjunky/python-garminconnect/master/demo.py) - All 130+ API methods
 - **API Documentation**: Comprehensive method documentation in source code
@@ -372,6 +380,7 @@ If you find this library useful for your projects, please consider supporting it
 [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-red.svg?style=for-the-badge&logo=github)](https://github.com/sponsors/cyberjunky)
 
 **Why Support?**
+
 - Keeps the project actively maintained
 - Enables faster bug fixes and new features
 - Supports infrastructure costs (testing, AI, CI/CD)

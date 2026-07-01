@@ -23,6 +23,9 @@ from datetime import date
 from getpass import getpass
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv()  # near the top, before os.getenv calls
+
 from garminconnect import (
     Garmin,
     GarminConnectAuthenticationError,
