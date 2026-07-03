@@ -10,6 +10,16 @@
 
 - delete garmin connect file: `rm -rf ~/.garminconnect`
 
+- Pull latest from the original project (upstream)
+
+git pull upstream master
+Then push the merged result to your fork:
+
+git push origin master
+
+Contribute back to upstream
+Open a PR on GitHub: rs337/python-garminconnect → cyberjunky/python-garminconnect.
+
 # Python: Garmin Connect
 
 The Garmin Connect API library comes with two examples:
